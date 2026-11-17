@@ -37,3 +37,15 @@ history=sorted(history,key=lambda h:h['date'])[-365:]
 result={'supplier':'Viva Energy','city':'Melbourne','fuel':'Diesel','price_cpl':price,'published_date':published,'checked_at':datetime.now(timezone.utc).isoformat(),'source':URL,'history':history}
 OUT.write_text(json.dumps(result,indent=2)+'\n')
 print('Updated:',published,price,'c/L')
+
+# Detect a genuine change in the published diesel price
+previous_price = old.get('price_cpl')
+
+if previous_price is not None and round(float(previous_price), 2) != round(float(price), 2):
+    difference = round(float(price) - float(previous_price), 2)
+    direction = "INCREASE" if difference > 0 else "DECREASE"
+
+    print("DIESEL PRICE CHANGE DETECTED")
+    print("Previous:", previous_price, "c/L")
+    print("New:", price, "c/L")
+    print("Movement:", direction, abs(difference), "c/L")
