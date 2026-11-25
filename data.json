@@ -2,9 +2,9 @@
   "supplier": "Viva Energy",
   "city": "Melbourne",
   "fuel": "Diesel",
-  "price_cpl": 232.01,
-  "published_date": "2026-11-25",
-  "checked_at": "2026-11-24T19:05:42.004107+00:00",
+  "price_cpl": 228.92,
+  "published_date": "2026-11-26",
+  "checked_at": "2026-11-25T18:58:54.074873+00:00",
   "source": "https://www.vivaenergy.com.au/quick-links/terminal-gate-pricing",
   "history": [
     {
@@ -34,6 +34,10 @@
     {
       "date": "2026-11-25",
       "price": 232.01
+    },
+    {
+      "date": "2026-11-26",
+      "price": 228.92
     }
   ]
 }
